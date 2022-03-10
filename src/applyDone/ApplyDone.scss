@@ -1,0 +1,18 @@
+.result {
+  padding: 8px 8px;
+}
+.result > * {
+  padding: 8px 0;
+}
+
+.copy-enable-content {
+  display: flex;
+  flex-direction: column;
+}
+.copy-icon {
+  margin-left: 8px;
+}
+
+.copy-enable-content > * {
+  margin-right: 8px;
+}
