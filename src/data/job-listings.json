@@ -1,0 +1,80 @@
+[
+  {
+    "did": "did:ion:EiBiVaUb_7fr1sYefT1-1jy3ysNQ1pU29znEjTal9TFJkA",
+    "listings": [
+      {
+        "overview": {
+          "role": "シニアコンサルタント",
+          "location": "大阪",
+          "time": "10:00 - 19:00"
+        },
+        "description": {
+          "title": "ブロックチェーン技術の調査",
+          "description": "サプライチェーンへのブロックチェーン技術適用に関する調査をしていただきます。"
+        },
+        "requirements": {
+          "requirements": [
+            "ブロックチェーンに関するプロジェクトで2年以上の働いた経験",
+            "英語でのビジネス会話ができること"
+          ]
+        }
+      },
+      {
+        "overview": {
+          "role": "人事部長",
+          "location": "大阪",
+          "time": "10:00 - 19:00"
+        },
+        "description": {
+          "title": "本社の人事業務全般の牽引",
+          "description": "本社全体での採用・人材育成を担っていただきます。"
+        },
+        "requirements": {
+          "requirements": [
+            "1000人以上の従業員を持つ企業の人事部長",
+            "英語でのビジネス会話ができること"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "did": "did:ion:EiDh2OrkrUnXBXghWDtXe2_XGkkDD6OSDDPBlorFltjhCw",
+    "listings": [
+      {
+        "overview": {
+          "role": "リードソフトウェアエンジニア",
+          "location": "リモート",
+          "time": "10:00 - 19:00"
+        },
+        "description": {
+          "title": "Trusted Web連携機能の開発",
+          "description": "10人程度の開発チームの一員として Trusted Web 連携機能を開発していただきます。"
+        },
+        "requirements": {
+          "requirements": [
+            "ブロックチェーンに関する3年以上の開発経験",
+            "DID/VCに関する2年以上の開発経験"
+          ]
+        }
+      },
+      {
+        "overview": {
+          "role": "プロジェクトマネージャー",
+          "location": "東京",
+          "time": "10:00 - 19:00"
+        },
+        "description": {
+          "title": "Trusted Web連携プロジェクトの牽引",
+          "description": "10人程度の開発チームのリーダーとしてプロジェクト管理をしていただきます。"
+        },
+        "requirements": {
+          "requirements": [
+            "10人強の開発チームを1年以上プロジェクトリーダーとして牽引した経験",
+            "DID/VCに関する2年以上の開発経験"
+          ]
+        }
+      }
+    ]
+  }
+]

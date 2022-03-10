@@ -5,14 +5,20 @@ import React, {
   useState,
 } from "react";
 import { useLocation } from "react-router-dom";
+import "../App.scss";
 
 import { generateJWT } from "../siop";
 import { Context } from "../context";
 import { CreateDidResult } from "../types";
+import companyMetaInfo from "../data/company-meta-info.json";
+import JobListing from "../components/JobListing";
+import jobListingPropsArray from "../data/job-listings.json";
 
 export const Apply: FunctionComponent = () => {
   const [currentDid, setCurrentDid] = useState<CreateDidResult | undefined>();
   const [port, setPort] = useState<string>();
+  const [companyName, setCompanyName] = useState<string>();
+  const [jobListingProps, setJobListingProps] = useState<any>();
   const { companies } = useContext(Context);
   const location = useLocation();
 
@@ -45,21 +51,39 @@ export const Apply: FunctionComponent = () => {
       if (createDidResult) {
         setCurrentDid(createDidResult);
       }
+      const metaInfo = companyMetaInfo.find((c) => c.did === did);
+      if (metaInfo) {
+        setCompanyName(metaInfo.name);
+      }
+
+      const jobListingPropsOrNull = jobListingPropsArray.find(
+        (p) => p.did === did,
+      );
+      if (did) {
+        setJobListingProps(jobListingPropsOrNull?.listings);
+      }
     }
   }, [location, companies]);
 
   return (
     <div className="container">
+      <h1>{companyName}</h1>
       <h1>求人情報</h1>
-      <h4>求人1</h4>
-      <p>本文1</p>
-      <p>本文2</p>
-      <h4>求人2</h4>
-      <p>本文1</p>
-      <p>本文2</p>
-      <button className={"btn btn-primary"} onClick={handleClick}>
-        応募する
-      </button>
+      <div style={{ height: "32px" }} />
+
+      {currentDid &&
+        companyName &&
+        jobListingProps.map((props: any) => (
+          <div style={{ width: "100%" }}>
+            <JobListing
+              did={currentDid!.initialState.shortForm}
+              companyName={companyName}
+              jobListingProps={props}
+              handleApply={handleClick}
+            />
+            <div style={{ height: "32px" }} />
+          </div>
+        ))}
     </div>
   );
 };

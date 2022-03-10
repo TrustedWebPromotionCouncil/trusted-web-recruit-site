@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -11,32 +11,24 @@ import { Apply } from "./apply/Apply";
 import { ApplyDone } from "./applyDone/ApplyDone";
 import { CreateDidResult } from "./types";
 import { Context } from "./context";
+import company1 from "./data/recruiting_company1.json";
+import company2 from "./data/recruiting_company2.json";
 
-import "./cusom.scss";
+import "./App.scss";
 
 const Layout: FunctionComponent = () => {
   return (
-    <div>
-      <Outlet />
-    </div>
+    <>
+      <div>
+        <Outlet />
+      </div>
+    </>
   );
 };
 
-const COMPANY_COUNT = 2;
 function App() {
-  const [companies, setCompanies] = useState<CreateDidResult[]>([]);
-  useEffect(() => {
-    const f = async () => {
-      const arr = [];
-      for (let i = 0; i < COMPANY_COUNT; i++) {
-        const response = await fetch(`/recruiting_company${i + 1}.json`);
-        const createResult = await response.json();
-        arr.push(createResult);
-      }
-      setCompanies(arr);
-    };
-    f();
-  }, []);
+  const companies = [company1 as CreateDidResult, company2 as CreateDidResult];
+
   return (
     <div>
       <Router>
